@@ -23,7 +23,7 @@ app.use(express.static('public'));
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        const uploadDir = 'uploads/';
+        const uploadDir =multer({ storage: multer.memoryStorage() });
         if (!fs.existsSync(uploadDir)) {
             fs.mkdirSync(uploadDir, { recursive: true });
         }
@@ -247,5 +247,6 @@ app.listen(PORT, () => {
     console.log(`🔑 Gemini API configured: ${!!process.env.GEMINI_API_KEY}`);
     console.log(`🌐 Open http://localhost:${PORT} in your browser`);
 });
+
 
 export default app;
