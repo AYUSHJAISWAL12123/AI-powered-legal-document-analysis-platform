@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Document Analyzer</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>⚖️ Legal Document Analyzer</h1>
+      <p>AI-powered tool to highlight important points, detect risks, and provide recommendations</p>
+    </header>
+
+    <main class="main-content">
+      <section class="upload-section">
+        <h2 class="section-title">Upload Document</h2>
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+          <div class="upload-icon">📄</div>
+          <p class="upload-text">Click to upload or drag & drop</p>
+          <span class="upload-hint">Supports PDF, JPG, PNG</span>
+        </div>
+
+        <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" />
+
+        <div class="file-info" id="fileInfo">
+          <p><strong>Selected file:</strong> <span id="fileName"></span></p>
+          <p><strong>Size:</strong> <span id="fileSize"></span></p>
+          <p><strong>Type:</strong> <span id="fileType"></span></p>
+        </div>
+
+        <button class="analyze-btn" id="analyzeBtn" disabled>
+          Analyze Document
+        </button>
+      </section>
+
+      <section class="results-section">
+        <h2 class="section-title">Analysis Results</h2>
+
+        <div class="results-placeholder" id="placeholder">
+          <div class="icon">🔍</div>
+          <p>Upload a document to see AI-powered analysis</p>
+        </div>
+
+        <div class="loading" id="loading">
+          <div class="loading-spinner"></div>
+          <p>Analyzing document with AI...</p>
+          <small>This may take a few moments</small>
+        </div>
+
+        <div class="analysis-results" id="results">
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
